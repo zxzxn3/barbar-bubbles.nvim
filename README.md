@@ -48,9 +48,9 @@ For a local lazy.nvim specification, use:
   dir = vim.fn.expand('~/.local/share/barbar-bubbles.nvim'),
   name = 'barbar-bubbles.nvim',
   dependencies = { 'romgrk/barbar.nvim', 'nvim-lualine/lualine.nvim' },
+  init = function() vim.g.barbar_auto_setup = false end,
   config = function()
     -- Use your own Lualine setup here instead of the minimal defaults.
-    vim.g.barbar_auto_setup = false
     require('lualine').setup {}
     local bubbles = require('barbar-bubbles')
     require('barbar').setup(bubbles.barbar_options)
