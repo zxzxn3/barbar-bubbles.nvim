@@ -21,16 +21,16 @@ Configure Lualine before applying this style. Its `lualine_a_normal`,
 The render adapter uses Barbar's internal `barbar.ui.render.set_tabline` function:
 compatibility should be checked when Barbar changes its renderer.
 
-## Local installation with vim.pack (Neovim 0.12+)
+## Installation with vim.pack (Neovim 0.12+)
 
-This repository is currently local-only. Install its committed version:
+Install the style alongside Barbar and Lualine:
 
 ```lua
 vim.g.barbar_auto_setup = false
 vim.pack.add {
   'https://github.com/romgrk/barbar.nvim',
   'https://github.com/nvim-lualine/lualine.nvim',
-  { src = 'file://' .. vim.fn.expand('~/.local/share/barbar-bubbles.nvim') },
+  'https://github.com/zxzxn3/barbar-bubbles.nvim',
 }
 
 require('lualine').setup {}
@@ -41,12 +41,11 @@ require('barbar').setup(vim.tbl_deep_extend('force', {
 bubbles.setup { flat_first = true }
 ```
 
-For a local lazy.nvim specification, use:
+For a lazy.nvim specification, use:
 
 ```lua
 {
-  dir = vim.fn.expand('~/.local/share/barbar-bubbles.nvim'),
-  name = 'barbar-bubbles.nvim',
+  'zxzxn3/barbar-bubbles.nvim',
   dependencies = { 'romgrk/barbar.nvim', 'nvim-lualine/lualine.nvim' },
   init = function() vim.g.barbar_auto_setup = false end,
   config = function()
@@ -72,8 +71,18 @@ refreshes on `ColorScheme` events.
   not stack adapters; restart Neovim to change this option.
 
 To disable the style, omit both the options merge and `setup()`, then restart.
-After committing local updates, update the installed copy with
+Update the installed copy with
 `vim.pack.update({ 'barbar-bubbles.nvim' })`.
 
-This code was extracted from a working personal configuration. Packaging and
-the new setup entry point have not yet been independently runtime-verified.
+## Validation
+
+Independently checked with isolated copies of the configuration and installed
+plugins (Barbar `337ecfa`, Lualine `221ce6b`): vim.pack loading, options merging,
+all state/edge/statistic highlights, theme changes, and repeated setup. New and
+old styles produced identical highlight/tabline snapshots and matching terminal
+glyph/color output in a real PTY. Existing buffer behavior and the configuration's
+tree-focus adapter remained intact.
+
+Nightfall and SilkCircuit were checked; Noctalia, lazy.nvim installation and
+human GUI visual inspection were not part of that validation. Theme refresh is
+scheduled, so a transient previous palette is possible, as in the original style.
