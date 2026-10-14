@@ -76,13 +76,12 @@ Update the installed copy with
 
 ## Validation
 
-Independently checked with isolated copies of the configuration and installed
-plugins (Barbar `337ecfa`, Lualine `221ce6b`): vim.pack loading, options merging,
-all state/edge/statistic highlights, theme changes, and repeated setup. New and
-old styles produced identical highlight/tabline snapshots and matching terminal
-glyph/color output in a real PTY. Existing buffer behavior and the configuration's
-tree-focus adapter remained intact.
+Checked with Barbar `337ecfa` and Lualine `221ce6b`: vim.pack loading, options
+merging, buffer-state and separator highlights, Git and diagnostic colors,
+colorscheme changes, and repeated setup. Terminal glyphs and colors were also
+checked in a real PTY.
 
-Nightfall and SilkCircuit were checked; Noctalia, lazy.nvim installation and
-human GUI visual inspection were not part of that validation. Theme refresh is
-scheduled, so a transient previous palette is possible, as in the original style.
+Nightfall and SilkCircuit were checked. Other colorschemes, lazy.nvim
+installation, and human GUI visual inspection were not part of that validation.
+Theme refresh is scheduled, so the previous palette may appear briefly when
+changing colorschemes.
