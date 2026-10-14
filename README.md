@@ -1,5 +1,13 @@
 # barbar-bubbles.nvim
 
+![Barbar Bubbles with a Lualine winbar](assets/preview.png)
+
+The screenshot pairs this tabline style with a customized version of Lualine's
+[Bubbles example](https://github.com/nvim-lualine/lualine.nvim/blob/master/examples/bubbles.lua).
+Lualine's components are placed in `winbar` rather than the bottom statusline,
+producing the second bar at the top. Barbar provides the buffer tabs above it;
+this plugin styles those tabs and does not move Lualine itself.
+
 A Bubbles companion style for Barbar, using Lualine's palette.
 
 - Current, visible and hidden buffers use Lualine's main, secondary and inactive colors.
