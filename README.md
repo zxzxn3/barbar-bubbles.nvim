@@ -82,14 +82,11 @@ To disable the style, omit both the options merge and `setup()`, then restart.
 Update the installed copy with
 `vim.pack.update({ 'barbar-bubbles.nvim' })`.
 
-## Validation
+## Tested setup
 
-Checked with Barbar `337ecfa` and Lualine `221ce6b`: vim.pack loading, options
-merging, buffer-state and separator highlights, Git and diagnostic colors,
-colorscheme changes, and repeated setup. Terminal glyphs and colors were also
-checked in a real PTY.
+Used daily in Neovide. Tested with vim.pack and lazy.nvim, including theme
+changes and repeated setup. Colors were checked with Nightfall, SilkCircuit,
+Gruvbox, and Ocean.
 
-Nightfall and SilkCircuit were checked. Other colorschemes, lazy.nvim
-installation, and human GUI visual inspection were not part of that validation.
 Theme refresh is scheduled, so the previous palette may appear briefly when
 changing colorschemes.
