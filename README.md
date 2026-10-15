@@ -90,3 +90,8 @@ Gruvbox, and Ocean.
 
 Theme refresh is scheduled, so the previous palette may appear briefly when
 changing colorschemes.
+
+## License
+
+Licensed under the GNU General Public License v3.0 only (GPL-3.0-only).
+See [LICENSE](LICENSE).

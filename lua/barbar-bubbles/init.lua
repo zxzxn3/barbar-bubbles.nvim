@@ -1,3 +1,6 @@
+-- SPDX-License-Identifier: GPL-3.0-only
+-- Copyright (c) 2026 zxzx
+
 -- Bubbles companion style for Barbar: lualine colors and curved tab edges.
 local M = {}
 local initialized = false
